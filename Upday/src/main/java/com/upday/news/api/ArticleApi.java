@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -34,8 +35,8 @@ public class ArticleApi {
     private final ArticleServiceImpl articleService;
     
     
-    @GetMapping("/byKeywords")
-    public ResponseEntity<List<Article>> findArtclesByKeywords(@RequestParam(value="keywords") List<String> keywords) {
+    @RequestMapping("/byKeywords")
+    public ResponseEntity<List<Article>> findArtclesByKeywords(@RequestParam Set<String> keywords) {
         if(keywords.isEmpty()){
         	log.error("Provide any keywords to find articles");
         	return new ResponseEntity<>(new ArrayList<Article>(),HttpStatus.BAD_REQUEST);

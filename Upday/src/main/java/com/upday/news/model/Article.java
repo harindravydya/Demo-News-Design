@@ -20,7 +20,7 @@ import lombok.Data;
 @Builder
 public class Article {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     private String header;
@@ -28,7 +28,8 @@ public class Article {
     private String text;
     
     @Temporal(TemporalType.DATE)
-    private Date publishDate;
+    @Builder.Default
+    private Date publishDate= new Date();
     
     @ElementCollection
     @Builder.Default
