@@ -35,7 +35,7 @@ public class ArticleApi {
     private final ArticleServiceImpl articleService;
     
     
-    @RequestMapping("/byKeywords")
+    @GetMapping("/byKeywords")
     public ResponseEntity<List<Article>> findArtclesByKeywords(@RequestParam Set<String> keywords) {
         if(keywords.isEmpty()){
         	log.error("Provide any keywords to find articles");
