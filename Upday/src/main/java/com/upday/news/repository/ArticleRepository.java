@@ -1,5 +1,6 @@
 package com.upday.news.repository;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -15,4 +16,7 @@ public interface ArticleRepository extends CrudRepository<Article, Long> {
     
     @Query("select distinct article from Article article left join fetch article.keywords left join fetch article.authors a where a = :authorName ")
     List<Article> findAllArticlesByAuthorName(@Param("authorName") String authorName);
+
+    @Query("select a from Article a where a.publishDate between ?1 and ?2 ")
+    List<Article> findAllArtilcesBetweenDates(Date from, Date to);
 }
