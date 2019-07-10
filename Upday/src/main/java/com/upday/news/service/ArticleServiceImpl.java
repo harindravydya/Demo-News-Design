@@ -1,5 +1,6 @@
 package com.upday.news.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -26,8 +27,8 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public List<Article> findAllArticlesForAGivenPeriod() {
-		return null;
+	public List<Article> findAllArticlesForAGivenPeriod(Date from, Date to) {
+		return articleRepository.findAllArtilcesBetweenDates(from, to);
 	}
 
 	@Override
