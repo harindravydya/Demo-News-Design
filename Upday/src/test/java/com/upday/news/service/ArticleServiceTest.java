@@ -39,7 +39,7 @@ public class ArticleServiceTest {
    
     @Test
     public void testIfMockedKeywordsWillReturnArticles() {
-    	List<String> keywords = new ArrayList<>();
+    	Set<String> keywords = new HashSet<>();
     	keywords.add("Brand Builing");
     	keywords.add("Enterpreneur");
     	Set<String> keywordSet = new HashSet<>();
@@ -57,7 +57,7 @@ public class ArticleServiceTest {
     
     @Test
     public void testIfNoArticlesArePresentForGivenKeywords() {
-    	List<String> keywords = new ArrayList<>();
+    	Set<String> keywords = new HashSet<>();
     	keywords.add("KeyX");
     	when(articleRepository.findAllArticlesByKeywords(keywords)).thenReturn(new ArrayList<>());
     	assertThat(articleService.findAllArticlesByKeywords(keywords).size(),Matchers.is(0));

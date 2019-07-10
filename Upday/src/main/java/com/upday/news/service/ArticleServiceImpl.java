@@ -2,6 +2,7 @@ package com.upday.news.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 
@@ -30,7 +31,7 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public List<Article> findAllArticlesByKeywords(List<String> keywords) {
+	public List<Article> findAllArticlesByKeywords(Set<String> keywords) {
 		return articleRepository.findAllArticlesByKeywords(keywords);
 	}
 

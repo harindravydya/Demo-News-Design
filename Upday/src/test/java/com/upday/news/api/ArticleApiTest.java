@@ -36,7 +36,7 @@ public class ArticleApiTest {
 	
 	@Test
 	public void testArticleApiforKeywordsWhenKeywordsAreNotPresent() {
-		List<String> keywords = new ArrayList<>();
+		Set<String> keywords = new HashSet<>();
 		ResponseEntity<List<Article>> articles = articleApi.findArtclesByKeywords(keywords);
 		assertThat(articles.getStatusCode().value(),Matchers.is(400));
 	}
@@ -45,8 +45,8 @@ public class ArticleApiTest {
 	public void testArticleApiForRequiredKeywords() {
 		Set<String> keywords = new HashSet<>();
 		keywords.add("CWC2019");
-		when(articleService.findAllArticlesByKeywords( new ArrayList<String>(keywords))).thenReturn(getListOfArticlesForTest());
-		ResponseEntity<List<Article>> articles = articleApi.findArtclesByKeywords(new ArrayList<String>(keywords));
+		when(articleService.findAllArticlesByKeywords( new HashSet<String>(keywords))).thenReturn(getListOfArticlesForTest());
+		ResponseEntity<List<Article>> articles = articleApi.findArtclesByKeywords(new HashSet<String>(keywords));
 		assertThat(articles.getStatusCode().value(),Matchers.is(200));
 	}
 	
