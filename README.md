@@ -1,5 +1,5 @@
 # News API
-This is the API for creating, updating & retrieving news articles. This product runs on in-memory db and every required library is provided as maven dependency.
+This is the API for creating, updating & retrieving news articles. This product runs on in-memory db and every required library is provided as maven dependency. This shows how test cases can be applied at different layers of applications (Controller,Services).
 
 
 # H2 Console
