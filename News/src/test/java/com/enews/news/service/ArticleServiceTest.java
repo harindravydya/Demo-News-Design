@@ -1,4 +1,4 @@
-package com.upday.news.service;
+package com.enews.news.service;
 
 
 
@@ -19,9 +19,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.upday.news.model.Article;
-
-import com.upday.news.repository.ArticleRepository;
+import com.enews.news.model.Article;
+import com.enews.news.repository.ArticleRepository;
+import com.enews.news.service.ArticleServiceImpl;
 
 
 @RunWith(MockitoJUnitRunner.class)

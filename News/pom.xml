@@ -9,11 +9,11 @@
 		<version>2.1.6.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.upday.news</groupId>
+	<groupId>com.enews.news</groupId>
 	<artifactId>Upday</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Upday</name>
-	<description>Upday Challenge</description>
+	<name>enews</name>
+	<description>Enews Challenge</description>
 
 	<properties>
 		<java.version>1.8</java.version>

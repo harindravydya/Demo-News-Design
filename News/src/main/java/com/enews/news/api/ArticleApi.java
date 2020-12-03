@@ -1,4 +1,4 @@
-package com.upday.news.api;
+package com.enews.news.api;
 
 
 import java.io.IOException;
@@ -21,34 +21,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.upday.news.model.Article;
-import com.upday.news.service.ArticleServiceImpl;
+import com.enews.news.model.Article;
+import com.enews.news.service.ArticleServiceImpl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping("/api/v1/articles")
+@RequestMapping("/api/articles")
 @Slf4j
 @RequiredArgsConstructor
 public class ArticleApi {
     private final ArticleServiceImpl articleService;
     
     
-    @GetMapping("/byKeywords")
+    @GetMapping("/keywords")
     public ResponseEntity<List<Article>> findArtclesByKeywords(@RequestParam Set<String> keywords) {
         if(keywords.isEmpty()){
         	log.error("Provide any keywords to find articles");
-        	return new ResponseEntity<>(new ArrayList<Article>(),HttpStatus.BAD_REQUEST);
+        	return new ResponseEntity<>(new ArrayList<>(),HttpStatus.BAD_REQUEST);
         }
     	return new ResponseEntity<>(articleService.findAllArticlesByKeywords(keywords), HttpStatus.OK);
     }
     
-    @GetMapping("/byAuthor/{authorName}")
+    @GetMapping("/authors/{authorName}")
     public ResponseEntity<List<Article>> findArticlesByAuthor(@PathVariable("authorName") String authorName){
     	if(authorName == null) {
     		log.error("Author name is " + authorName );
-    		return new ResponseEntity<>(new ArrayList<Article>(),HttpStatus.BAD_REQUEST);
+    		return new ResponseEntity<>(new ArrayList<>(),HttpStatus.BAD_REQUEST);
     	}
     	List<Article> articles = articleService.findAllArticlesByAuthor(authorName);
     	if(articles.isEmpty()) {
@@ -71,7 +71,7 @@ public class ArticleApi {
         return new ResponseEntity<>(article.get(), HttpStatus.OK);
     }
     
-    @PostMapping("/saveArticle")
+    @PostMapping("/save")
     public ResponseEntity<Article> createArticle(@Valid @RequestBody Article article) throws IOException {
     	return new ResponseEntity<>(articleService.saveArticle(article),HttpStatus.OK); 
     }

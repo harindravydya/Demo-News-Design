@@ -1,4 +1,4 @@
-package com.upday.news.service;
+package com.enews.news.service;
 
 
 import java.util.Date;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-import com.upday.news.model.Article;
+import com.enews.news.model.Article;
 
 public interface ArticleService {
 	List<Article> findAllArticlesByAuthor(String author);

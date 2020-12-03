@@ -1,4 +1,4 @@
-package com.upday.news.service;
+package com.enews.news.service;
 
 import java.util.Date;
 import java.util.List;
@@ -9,8 +9,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.upday.news.model.Article;
-import com.upday.news.repository.ArticleRepository;
+import com.enews.news.model.Article;
+import com.enews.news.repository.ArticleRepository;
 
 import lombok.RequiredArgsConstructor;
 

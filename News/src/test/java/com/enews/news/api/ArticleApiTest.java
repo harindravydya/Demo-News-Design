@@ -1,4 +1,4 @@
-package com.upday.news.api;
+package com.enews.news.api;
 
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
@@ -19,8 +19,9 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.ResponseEntity;
 
-import com.upday.news.model.Article;
-import com.upday.news.service.ArticleServiceImpl;
+import com.enews.news.api.ArticleApi;
+import com.enews.news.model.Article;
+import com.enews.news.service.ArticleServiceImpl;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ArticleApiTest {

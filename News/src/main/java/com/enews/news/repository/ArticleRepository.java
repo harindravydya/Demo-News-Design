@@ -1,4 +1,4 @@
-package com.upday.news.repository;
+package com.enews.news.repository;
 
 import java.util.Date;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import com.upday.news.model.Article;
+import com.enews.news.model.Article;
 
 public interface ArticleRepository extends CrudRepository<Article, Long> {
     @Query("select distinct article from Article article left join fetch article.authors left join fetch article.keywords k where k in (:keywords)")

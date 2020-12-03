@@ -1,4 +1,4 @@
-package com.upday.news;
+package com.enews.news;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

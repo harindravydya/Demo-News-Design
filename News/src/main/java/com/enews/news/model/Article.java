@@ -1,4 +1,4 @@
-package com.upday.news.model;
+package com.enews.news.model;
 
 import java.util.Date;
 import java.util.HashSet;
